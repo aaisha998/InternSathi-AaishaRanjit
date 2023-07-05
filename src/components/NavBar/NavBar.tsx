@@ -6,7 +6,7 @@ export const NavBar = () => {
   const { data: categoryList } = useAllCategories();
   const [show, setShow] = useState(false);
   const [category, setCategory] = useState<string | undefined>();
-  const { data } = useSerchedCategory(category);
+  // const { data } = useSerchedCategory(category);
 
   return (
     <div className="nav-seciton">
