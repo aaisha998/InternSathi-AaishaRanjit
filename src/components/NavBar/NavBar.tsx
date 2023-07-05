@@ -29,12 +29,7 @@ export const NavBar = () => {
               <p className="nav-content">Search</p>
             </div>
           </a>
-          <a className="nav-link">
-            <div className="nav-text">
-              <i className=" icon-size bi bi-file-earmark"></i>
-              <p className="nav-content">Product Details</p>
-            </div>
-          </a>
+         
           <div
             className="nav-text dropdown-btn"
             onClick={() => {
