@@ -1,0 +1,51 @@
+@import "../../variable.scss";
+.banner-page {
+  p {
+    margin-bottom: 0;
+  }
+}
+.banner-section {
+  position: relative;
+  background: #87095d;
+  background: -webkit-linear-gradient(to right, #87095d, #000000);
+  background: linear-gradient(to right, #87095d, #000000);
+  height: 80vh;
+  padding: 20px;
+  color: white;
+  .down-image {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 50%;
+  }
+  .top-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .banner-content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 30%;
+  }
+  .high-light-wrapper {
+    display: flex;
+    justify-content: center;
+    .high-light {
+      margin-top: 20px;
+      background-color: $pure-black;
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 25px;
+    }
+  }
+}
+.search-section{
+  .banner-section{
+    height: 40vh;
+  }
+}

@@ -1,0 +1,62 @@
+.ReactModal__Content--after-open {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 0 !important;
+    border: 0px !important;
+    width: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    max-width: 80%;
+  }
+  
+  
+  .ReactModal__Overlay {
+    z-index: 30;
+  }
+  .popup-board {
+    overflow: scroll;
+    max-height: 95vh;
+    overflow-x: hidden;
+    padding: 0 !important;
+    .input-group{
+      .btn{
+        z-index: 0;
+      }
+    }
+    .popup-page {
+      padding: 30px;
+      .btn-right{
+        padding:32px 0;
+      }
+      .title-bar {
+        margin-bottom: 24px;
+        .small-title {
+          margin: 0;
+        }
+      }
+      .fix-price{
+        .input-field{
+          position: relative;
+        }
+        .input-group-append{
+          position: absolute;
+          right: 0;
+          border: none;
+        }
+      }
+      .side-spacing {
+        .cancel-icon {
+          img {
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  

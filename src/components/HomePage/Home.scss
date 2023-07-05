@@ -1,0 +1,16 @@
+@import "../../variable.scss";
+
+.home-page {
+  .width-25 {
+    width: 25%;
+    margin: 16px;
+  }
+  .width-50 {
+    width: 50%;
+    margin: 16px;
+    text-align: left;
+  }
+  .wrapper {
+    display: flex;
+  }
+}
