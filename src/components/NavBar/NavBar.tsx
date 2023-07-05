@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useAllCategories, useSerchedCategory } from "../Api/GetApi";
+import { useAllCategories } from "../Api/GetApi";
 import "./NavBar.scss";
 
 export const NavBar = () => {
   const { data: categoryList } = useAllCategories();
   const [show, setShow] = useState(false);
-  const [category, setCategory] = useState<string | undefined>();
+  // const [category, setCategory] = useState<string | undefined>();
   // const { data } = useSerchedCategory(category);
 
   return (
@@ -51,7 +51,7 @@ export const NavBar = () => {
                   <div
                     className="dropdown-item"
                     onClick={() => {
-                      setCategory(item.toString());
+                      // setCategory(item.toString());
                       window.location.href = '/search';
                     }}
                   >
