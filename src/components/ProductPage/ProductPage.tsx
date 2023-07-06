@@ -21,28 +21,34 @@ export const ProductPage = () => {
           <div className="produt-section">
             <p className="category-content">{data?.category}</p>
             <div className="produt-wrapper">
-              <div className="width-50">
-                <div className="product-list">
-                  <div className="product-section">
-                    <div className="product-grid ">
-                      <img
-                        src={data?.image}
-                        alt="img "
-                        className="product-img"
-                      />
+              <div className="col-md-12">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="product-list">
+                      <div className="product-section">
+                        <div className="product-grid ">
+                          <img
+                            src={data?.image}
+                            alt="img "
+                            className="product-img"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="width-50">
-                <div className="product-title">{data?.title}</div>
-                <label className="price">RS {data?.price}</label>
-                <div className="product-description">
-                  <p>Product Description</p>
-                  <p>{data?.description}</p>
-                </div>
-                <div>
-                  <button className="main-btn">Add To Cart</button>
+                  <div className="col-md-6">
+                    <div className="product-detail-wrapper">
+                      <div className="product-title">{data?.title}</div>
+                      <label className="price">RS {data?.price}</label>
+                      <div className="product-description">
+                        <p className="bold-content">Product Description</p>
+                        <p className="content">{data?.description}</p>
+                      </div>
+                      <div>
+                        <button className="main-btn">Add To Cart</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

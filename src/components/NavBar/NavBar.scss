@@ -3,7 +3,7 @@
   .mg-nav-40 {
     margin-bottom: 48px;
   }
-  .icon-gap{
+  .icon-gap {
     margin-left: 10px;
   }
   .dropdown-btn {
@@ -78,5 +78,10 @@
       color: $pure-white;
       font-size: 18px;
     }
+  }
+}
+@media (max-width: 480px) {
+  .nav-content {
+    display: none;
   }
 }

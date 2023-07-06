@@ -88,7 +88,7 @@ export const SearchPage = () => {
                           src={item.image}
                           alt="img "
                           className="product-img"
-                          onDoubleClick={() => {
+                          onClick={() => {
                             setSelectedId(item.id);
                             navigate(`/product-detail/${item.id}`);
                           }}

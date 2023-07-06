@@ -44,8 +44,29 @@
     }
   }
 }
-.search-section{
-  .banner-section{
+.search-section {
+  .banner-section {
     height: 40vh;
+  }
+}
+@media (max-width: 480px) {
+  .top-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+  }
+  .down-image {
+    top: -4% !important;
+    left: -6%;
+    width: 60% !important;
+  }
+  .banner-content {
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90% !important;
   }
 }

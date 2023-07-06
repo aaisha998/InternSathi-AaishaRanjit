@@ -40,11 +40,9 @@ export const NavBar = () => {
               setShow(!show);
             }}
           >
-            <i className="icon-size bi bi-house-door-fill"></i>
-            <p className="nav-content dropdown-toggle">
-              <CategoryIcon />
-              <span className="icon-gap"></span>Catagories
-            </p>
+            <CategoryIcon />
+
+            <p className="nav-content dropdown-toggle">Catagories</p>
             <div
               className={show ? "menu-dropdown" : "menu-dropdown no-dropdown"}
             >
