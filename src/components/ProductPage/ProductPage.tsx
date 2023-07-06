@@ -1,45 +1,54 @@
+import { useContext } from "react";
 import "../HomePage/Home.scss";
+import { SelectedDataContext } from "../ProductDetailsContext";
+import { SingleProduct } from "../Api/GetApi";
 interface Props {
-  category: string | undefined;
-  dataImage: string | undefined;
-  title: string | undefined;
-  description: string | undefined;
-  price: string | undefined;
-
+  // category: string | undefined;
+  // dataImage: string | undefined;
+  // title: string | undefined;
+  // description: string | undefined;
+  // price: string | undefined;
 }
-export const ProductPage: React.FC<Props> = ({
-  category,
-  dataImage,
-  title,
-  description,
-  price,
-}) => {
+export const ProductPage: React.FC<Props> = (
+  {
+    // category,
+    // dataImage,
+    // title,
+    // description,
+    // price,
+  }
+) => {
+  const { selectedData } = useContext(SelectedDataContext);
+
+  // const handleSelectData = (selectedData: SingleProduct) => {
+  //   setSelectedData(selectedData);
+  // };
   return (
     <div className="home-page">
-      <div className="title-block">
-        <h3 className="title">Latest Arrivals </h3>
-        <div className="border-div"></div>
-      </div>
       <div className="container">
         <div className="row">
           <div className="produt-section">
-            <p className="category-content">{category}</p>
+            <p className="category-content">{selectedData?.category}</p>
             <div className="produt-wrapper">
               <div className="width-50">
                 <div className="product-list">
                   <div className="product-section">
                     <div className="product-grid ">
-                      <img src={dataImage} alt="img " className="product-img" />
+                      <img
+                        src={selectedData?.image}
+                        alt="img "
+                        className="product-img"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="width-50">
-                <div className="product-title">{title}</div>
-                <label className="price">RS {price}</label>
+                <div className="product-title">{selectedData?.title}</div>
+                <label className="price">RS {selectedData?.price}</label>
                 <div className="product-description">
                   <p>Product Description</p>
-                  <p>{description}</p>
+                  <p>{selectedData?.description}</p>
                 </div>
                 <div>
                   <button className="main-btn">Add To Cart</button>

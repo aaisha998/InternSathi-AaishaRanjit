@@ -79,3 +79,23 @@ export const useSerchedCategory = (category?: string) => {
     }
   );
 };
+
+//limited
+export const GetLimitedProduct = () => {
+  return axios
+    .get(`https://fakestoreapi.com/products?limit=5`)
+    .then((res) => res.data);
+};
+
+export const useLimitedProduct = () => {
+  toast.success("Failed to Product");
+  return useQuery<SingleProduct[]>(
+    `https://fakestoreapi.com/products?limit=5`,
+    () => GetLimitedProduct(),
+    {
+      onError: (err: any) => {
+        toast.error("Failed to fetch limited product)");
+      },
+    }
+  );
+};
