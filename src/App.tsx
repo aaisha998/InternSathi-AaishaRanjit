@@ -11,20 +11,18 @@ import { ProductPage } from "./components/ProductPage/ProductPage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools />
-          <NavBar />
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools />
+        <NavBar />
 
-          <Routes>
-            <Route path="/" element={<HomePage />}></Route>
-            <Route path="/search" element={<SearchPage />}></Route>
-            <Route path="/product-detail/:id" element={<ProductPage />}></Route>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/search" element={<SearchPage />}></Route>
+          <Route path="/product-detail/:id" element={<ProductPage />}></Route>
 
-            <Route path="*" element={"Error"}></Route>
-          </Routes>
-        </QueryClientProvider>
-      </BrowserRouter>
+          <Route path="*" element={"Error"}></Route>
+        </Routes>
+      </QueryClientProvider>
     </div>
   );
 }
