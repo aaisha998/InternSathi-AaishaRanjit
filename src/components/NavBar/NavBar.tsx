@@ -38,21 +38,15 @@ export const NavBar = () => {
             }}
           >
             <i className="icon-size bi bi-house-door-fill"></i>
-            <p className="nav-content dropdown-toggle"><CategoryIcon /><span className="icon-gap"></span>Catagories</p>
+            <p className="nav-content dropdown-toggle">
+              <CategoryIcon />
+              <span className="icon-gap"></span>Catagories
+            </p>
             <div
               className={show ? "menu-dropdown" : "menu-dropdown no-dropdown"}
             >
               {categoryList?.map((item) => {
-                return (
-                  <div
-                    className="dropdown-item"
-                    onClick={() => {
-                      window.location.href = "/search";
-                    }}
-                  >
-                    {item}
-                  </div>
-                );
+                return <div className="dropdown-item">{item}</div>;
               })}
             </div>
           </div>
