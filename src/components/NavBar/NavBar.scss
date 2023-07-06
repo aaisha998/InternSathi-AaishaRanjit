@@ -3,8 +3,13 @@
   .mg-nav-40 {
     margin-bottom: 48px;
   }
+  .icon-gap{
+    margin-left: 10px;
+  }
   .dropdown-btn {
     position: relative;
+    gap: 10px;
+
     .menu-dropdown {
       position: absolute;
       top: 44px;
@@ -40,9 +45,11 @@
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     width: 100%;
     align-items: center;
+    .logo-section {
+      margin-left: 10%;
+    }
     .text {
-      color: $pri-color;
-      margin-left: 50%;
+      color: $pure-white;
     }
     .list-wrapper {
       z-index: 10;
@@ -68,7 +75,7 @@
       }
     }
     .nav-content {
-      color: $pri-color;
+      color: $pure-white;
       font-size: 18px;
     }
   }

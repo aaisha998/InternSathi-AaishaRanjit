@@ -1,41 +1,32 @@
-import { useContext } from "react";
 import "../HomePage/Home.scss";
-import { SelectedDataContext } from "../ProductDetailsContext";
-import { SingleProduct } from "../Api/GetApi";
-interface Props {
-  // category: string | undefined;
-  // dataImage: string | undefined;
-  // title: string | undefined;
-  // description: string | undefined;
-  // price: string | undefined;
-}
-export const ProductPage: React.FC<Props> = (
-  {
-    // category,
-    // dataImage,
-    // title,
-    // description,
-    // price,
-  }
-) => {
-  const { selectedData } = useContext(SelectedDataContext);
+import { useSingleProduct } from "../Api/GetApi";
+import { useParams } from "react-router";
 
-  // const handleSelectData = (selectedData: SingleProduct) => {
-  //   setSelectedData(selectedData);
-  // };
+export const ProductPage = () => {
+  const { id } = useParams<{ id?: string }>();
+
+  const parsedId = id ? parseInt(id, 10) : undefined;
+
+  const { data } = useSingleProduct(parsedId);
+
   return (
-    <div className="home-page">
+    <div className="home-page section-gap ">
+      <div className="section-gap"></div>
       <div className="container">
+        <div className="title-block">
+          <h3 className="title">Product Detail </h3>
+          <div className="border-div"></div>
+        </div>
         <div className="row">
           <div className="produt-section">
-            <p className="category-content">{selectedData?.category}</p>
+            <p className="category-content">{data?.category}</p>
             <div className="produt-wrapper">
               <div className="width-50">
                 <div className="product-list">
                   <div className="product-section">
                     <div className="product-grid ">
                       <img
-                        src={selectedData?.image}
+                        src={data?.image}
                         alt="img "
                         className="product-img"
                       />
@@ -44,11 +35,11 @@ export const ProductPage: React.FC<Props> = (
                 </div>
               </div>
               <div className="width-50">
-                <div className="product-title">{selectedData?.title}</div>
-                <label className="price">RS {selectedData?.price}</label>
+                <div className="product-title">{data?.title}</div>
+                <label className="price">RS {data?.price}</label>
                 <div className="product-description">
                   <p>Product Description</p>
-                  <p>{selectedData?.description}</p>
+                  <p>{data?.description}</p>
                 </div>
                 <div>
                   <button className="main-btn">Add To Cart</button>

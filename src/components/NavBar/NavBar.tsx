@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAllCategories } from "../Api/GetApi";
 import "./NavBar.scss";
+import { CategoryIcon, HomeIcon, SearchIcon } from "../svg";
 
 export const NavBar = () => {
   const { data: categoryList } = useAllCategories();
@@ -18,18 +19,18 @@ export const NavBar = () => {
         <div className="list-wrapper">
           <a className="nav-link" href="/">
             <div className="nav-text">
-              <i className="icon-size bi bi-calculator"></i>
+              <HomeIcon />
               <p className="nav-content">Home</p>
             </div>
           </a>
 
           <a className="nav-link" href="/search">
             <div className="nav-text">
-              <i className="icon-size bi bi-chat-right-dots-fill"></i>
+              <SearchIcon />
               <p className="nav-content">Search</p>
             </div>
           </a>
-         
+
           <div
             className="nav-text dropdown-btn"
             onClick={() => {
@@ -37,7 +38,7 @@ export const NavBar = () => {
             }}
           >
             <i className="icon-size bi bi-house-door-fill"></i>
-            <p className="nav-content dropdown-toggle">Catagories</p>
+            <p className="nav-content dropdown-toggle"><CategoryIcon /><span className="icon-gap"></span>Catagories</p>
             <div
               className={show ? "menu-dropdown" : "menu-dropdown no-dropdown"}
             >
@@ -46,8 +47,7 @@ export const NavBar = () => {
                   <div
                     className="dropdown-item"
                     onClick={() => {
-                      // setCategory(item.toString());
-                      window.location.href = '/search';
+                      window.location.href = "/search";
                     }}
                   >
                     {item}

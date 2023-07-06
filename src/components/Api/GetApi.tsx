@@ -20,21 +20,34 @@ export interface SingleProduct {
 //Api
 
 export const GetAllProduct = (id?: number) => {
-  const url = id
-    ? `https://fakestoreapi.com/products/${id}`
-    : "https://fakestoreapi.com/products";
-  return axios.get(url).then((res) => res.data);
+  return axios.get("https://fakestoreapi.com/products").then((res) => res.data);
 };
 
 export const useAllProduct = (id?: number) => {
-  const queryKey = id ? `product_${id}` : "allProducts";
   toast.success("Failed to Product");
-  return useQuery<SingleProduct | SingleProduct[]>(
-    queryKey,
+  return useQuery<SingleProduct[]>(
+    "https://fakestoreapi.com/products",
     () => GetAllProduct(id),
     {
       onError: (err: any) => {
         toast.error("Failed to fetch product(s)");
+      },
+    }
+  );
+};
+export const GetSingleProduct = (id?: number) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  return axios.get(url).then((res) => res.data);
+};
+
+export const useSingleProduct = (id?: number) => {
+  toast.success("Failed to Product");
+  return useQuery<SingleProduct>(
+    `https://fakestoreapi.com/products/${id}`,
+    () => GetSingleProduct(id),
+    {
+      onError: (err: any) => {
+        toast.error("Failed to fetch product");
       },
     }
   );

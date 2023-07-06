@@ -173,6 +173,35 @@
     width: 280px;
   }
 }
-.section-gap{
+.section-gap {
   margin-top: 48px;
+}
+.search-content {
+  width: 70%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .title{
+    color: $pure-white ;
+  }
+}
+.search-field {
+  position: relative;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+}
+.search-btn {
+  background: #87095d;
+  padding: 7px 14px;
+  color: #fff;
+  border: none;
+  position: absolute;
+  right: 0%;
+  bottom: 0px;
+  border-radius: 25px;
+  
 }
