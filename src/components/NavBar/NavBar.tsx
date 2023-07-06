@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useAllCategories } from "../Api/GetApi";
 import "./NavBar.scss";
 import { CategoryIcon, HomeIcon, SearchIcon } from "../svg";
+import { useNavigate } from "react-router";
 
 export const NavBar = () => {
   const { data: categoryList } = useAllCategories();
   const [show, setShow] = useState(false);
-  // const [category, setCategory] = useState<string | undefined>();
-  // const { data } = useSerchedCategory(category);
+  const navigate = useNavigate();
 
   return (
     <div className="nav-seciton">
@@ -24,12 +24,15 @@ export const NavBar = () => {
             </div>
           </a>
 
-          <a className="nav-link" href="/search">
-            <div className="nav-text">
-              <SearchIcon />
-              <p className="nav-content">Search</p>
-            </div>
-          </a>
+          <div
+            className="nav-text"
+            onClick={() => {
+              navigate(`/search`);
+            }}
+          >
+            <SearchIcon />
+            <p className="nav-content">Search</p>
+          </div>
 
           <div
             className="nav-text dropdown-btn"

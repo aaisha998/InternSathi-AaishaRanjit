@@ -19,7 +19,6 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
           <Route path="/product-detail/:id" element={<ProductPage />}></Route>
-
           <Route path="*" element={"Error"}></Route>
         </Routes>
       </QueryClientProvider>
